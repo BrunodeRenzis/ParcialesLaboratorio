@@ -25,9 +25,9 @@ namespace Entidades
 
         public static void HardcodeoUsuarios()
         {
-            PetShop.Usuarios.Add(new Usuario("bderenzis", "bruno2021",1,EPerfil.Administrador));
-            PetShop.Usuarios.Add(new Usuario("lrodriguez", "lucas2021",2,EPerfil.Empleado));
-            PetShop.Usuarios.Add(new Usuario("eoggioni", "ezequiel2021",3,EPerfil.Empleado));
+            PetShop.Usuarios.Add(new Usuario("Bruno","de Renzis","bderenzis", "bruno2021",1,EPerfil.Administrador));
+            PetShop.Usuarios.Add(new Usuario("Lucas","Rodriguez","lrodriguez", "lucas2021",2,EPerfil.Empleado));
+            PetShop.Usuarios.Add(new Usuario("Ezequiel","Oggioni","eoggioni", "ezequiel2021",3,EPerfil.Empleado));
         }
     }
 }

@@ -51,7 +51,12 @@ namespace ParcialBrunoDeRenzis
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            foreach (Usuario usuario in PetShop.Usuarios)
+            {
+                this.lsUsuarios.Items.Add(usuario.ToString());
+            }
         }
+
+        
     }
 }

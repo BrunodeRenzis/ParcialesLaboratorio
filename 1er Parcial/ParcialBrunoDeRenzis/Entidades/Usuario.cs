@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario
+    public class Usuario:Persona
     {
         int idUsuario;
         string nombreUsuario;
@@ -17,7 +17,7 @@ namespace Entidades
         {
         }
 
-        public Usuario(string nombreUsuario,string passUsuario,int idUsuario,EPerfil perfil)
+        public Usuario(string nombre, string apellido,string nombreUsuario,string passUsuario,int idUsuario,EPerfil perfil):base(nombre,apellido)
         {
             this.nombreUsuario = nombreUsuario;
             this.passUsuario = passUsuario;
@@ -28,25 +28,15 @@ namespace Entidades
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public EPerfil Perfil { get => perfil; set => perfil = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
-        public string PassUsuario { get => passUsuario; set => passUsuario = value; }
-
-        /*public void HardcodeoUsuarios()
-        {
-            PetShop.Usuarios.Add(new Usuario("bderenzis", "bruno2021",1,EPerfil.Administrador));
-            PetShop.Usuarios.Add(new Usuario("lrodriguez", "lucas2021",2,EPerfil.Empleado));
-            PetShop.Usuarios.Add(new Usuario("eoggioni", "ezequiel2021",3,EPerfil.Empleado));
-        }*/
-
-        
+        public string PassUsuario { get => passUsuario; set => passUsuario = value; }     
 
         
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.IdUsuario}");
-            sb.AppendLine($"{this.NombreUsuario}");
-            sb.AppendLine($"{this.PassUsuario}");
-            sb.AppendLine($"{this.Perfil.ToString()}");
+            sb.AppendLine($"{this.Nombre}");
+            sb.AppendLine($"{this.Apellido}");
+            sb.AppendLine($"--{this.Perfil}");
             return sb.ToString();
         }
 

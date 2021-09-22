@@ -33,6 +33,7 @@ namespace ParcialBrunoDeRenzis
             this.tbUser = new System.Windows.Forms.TextBox();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lsUsuarios = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // tbUser
@@ -62,11 +63,21 @@ namespace ParcialBrunoDeRenzis
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lsUsuarios
+            // 
+            this.lsUsuarios.FormattingEnabled = true;
+            this.lsUsuarios.ItemHeight = 15;
+            this.lsUsuarios.Location = new System.Drawing.Point(408, 39);
+            this.lsUsuarios.Name = "lsUsuarios";
+            this.lsUsuarios.Size = new System.Drawing.Size(183, 94);
+            this.lsUsuarios.TabIndex = 2;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 203);
+            this.Controls.Add(this.lsUsuarios);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.tbPass);
             this.Controls.Add(this.tbUser);
@@ -85,5 +96,6 @@ namespace ParcialBrunoDeRenzis
         private System.Windows.Forms.TextBox tbUser;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.ListBox lsUsuarios;
     }
 }
