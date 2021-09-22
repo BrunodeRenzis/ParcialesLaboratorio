@@ -6,54 +6,49 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario:Persona
+    public class Usuario
     {
         int idUsuario;
+        string nombreUsuario;
+        string passUsuario;
         EPerfil perfil;
-        List<Usuario> usuarios;
-
-
         
         public Usuario()
         {
-            this.Usuarios = new List<Usuario>();
         }
 
-        public Usuario(string nombre,string apellido,int id,EPerfil perfil):base(nombre,apellido)
+        public Usuario(string nombreUsuario,string passUsuario,int idUsuario,EPerfil perfil)
         {
+            this.nombreUsuario = nombreUsuario;
+            this.passUsuario = passUsuario;
+            this.idUsuario = idUsuario;
             this.perfil = perfil;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public EPerfil Perfil { get => perfil; set => perfil = value; }
-        public List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string PassUsuario { get => passUsuario; set => passUsuario = value; }
 
-        public void HardcodeoUsuarios()
+        /*public void HardcodeoUsuarios()
         {
             PetShop.Usuarios.Add(new Usuario("bderenzis", "bruno2021",1,EPerfil.Administrador));
             PetShop.Usuarios.Add(new Usuario("lrodriguez", "lucas2021",2,EPerfil.Empleado));
             PetShop.Usuarios.Add(new Usuario("eoggioni", "ezequiel2021",3,EPerfil.Empleado));
-        }
+        }*/
 
-        public static bool operator == (Usuario usuario,string nombre)
+        
+
+        
+        public override string ToString()
         {
-            foreach (Usuario usuarioComparacion in PetShop.Usuarios)
-            {
-                if(usuario.Nombre == usuarioComparacion.Nombre)
-                {
-                    return true;
-                }
-            }
-            PetShop.Usuarios.Add(usuario);
-            return false;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.IdUsuario}");
+            sb.AppendLine($"{this.NombreUsuario}");
+            sb.AppendLine($"{this.PassUsuario}");
+            sb.AppendLine($"{this.Perfil.ToString()}");
+            return sb.ToString();
         }
-
-        public static bool operator !=(Usuario usuario, string nombre)
-        {
-            return !(usuario!=nombre);
-        }
-
-
 
 
     }

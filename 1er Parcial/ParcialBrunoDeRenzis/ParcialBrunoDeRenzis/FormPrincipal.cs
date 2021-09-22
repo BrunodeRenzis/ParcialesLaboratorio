@@ -23,7 +23,10 @@ namespace ParcialBrunoDeRenzis
                 e.Cancel = true;
         }
 
+        void PruebaUsuarios()
+        {
 
+        }
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 

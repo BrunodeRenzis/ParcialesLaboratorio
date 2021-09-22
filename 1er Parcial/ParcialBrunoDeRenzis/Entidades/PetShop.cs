@@ -22,5 +22,12 @@ namespace Entidades
         public static List<Cliente> Clientes { get => clientes; set => clientes = value; }
         public static List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
         public static List<Venta> Ventas { get => ventas; set => ventas = value; }
+
+        public static void HardcodeoUsuarios()
+        {
+            PetShop.Usuarios.Add(new Usuario("bderenzis", "bruno2021",1,EPerfil.Administrador));
+            PetShop.Usuarios.Add(new Usuario("lrodriguez", "lucas2021",2,EPerfil.Empleado));
+            PetShop.Usuarios.Add(new Usuario("eoggioni", "ezequiel2021",3,EPerfil.Empleado));
+        }
     }
 }

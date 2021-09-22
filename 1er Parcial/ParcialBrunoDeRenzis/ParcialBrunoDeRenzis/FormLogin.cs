@@ -12,11 +12,11 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormLogin : Form
     {
-        Usuario usuarioLogueo;
+        
         public FormLogin()
         {
             InitializeComponent();
-            usuarioLogueo = new Usuario();
+            PetShop.HardcodeoUsuarios();
         }
 
         void Limpiar()
@@ -25,17 +25,23 @@ namespace ParcialBrunoDeRenzis
             this.tbPass.Text = String.Empty;
         }
 
+        
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             FormPrincipal frmPpal = new FormPrincipal();
             bool usuarioEncontrado = false;
-            if(usuarioLogueo==usuarioLogueo.Nombre)
+            foreach (Usuario usuario in PetShop.Usuarios)
             {
+                if(usuario.NombreUsuario==tbUser.Text && usuario.PassUsuario == tbPass.Text)
+                {
                     this.Hide();
                     frmPpal.ShowDialog();
                     usuarioEncontrado = true;
                     this.Close();
+                }
             }
+            
             if (!usuarioEncontrado)
             {
                 MessageBox.Show("Usuario invalido");
