@@ -29,5 +29,15 @@ namespace Entidades
             PetShop.Usuarios.Add(new Usuario("Lucas","Rodriguez","lrodriguez", "lucas2021",2,EPerfil.Empleado));
             PetShop.Usuarios.Add(new Usuario("Ezequiel","Oggioni","eoggioni", "ezequiel2021",3,EPerfil.Empleado));
         }
+
+        public static void HardcodeoClientes()
+        {
+            PetShop.Clientes.Add(new Cliente(1,"Cosme","Fulanito",50000));
+            PetShop.Clientes.Add(new Cliente(2,"Petin","Partusa",30000));
+            PetShop.Clientes.Add(new Cliente(3,"Romeo Rubén","Romero",30000));
+            PetShop.Clientes.Add(new Cliente(4,"Mateo","Logía",50000));
+            PetShop.Clientes.Add(new Cliente(5,"Elba","Tracio",40000));
+            PetShop.Clientes.Add(new Cliente(6,"Susana","Door",40000));
+        }
     }
 }

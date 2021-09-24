@@ -9,3 +9,4 @@ C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Exam
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\Entidades\obj\Debug\net5.0\Entidades.dll
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache

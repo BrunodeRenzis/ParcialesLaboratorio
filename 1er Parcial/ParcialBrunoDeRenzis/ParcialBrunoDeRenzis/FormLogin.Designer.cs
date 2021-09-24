@@ -38,7 +38,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // tbUser
             // 
-            this.tbUser.Location = new System.Drawing.Point(224, 39);
+            this.tbUser.Location = new System.Drawing.Point(188, 39);
             this.tbUser.Name = "tbUser";
             this.tbUser.PlaceholderText = "Ingrese usuario";
             this.tbUser.Size = new System.Drawing.Size(166, 23);
@@ -46,7 +46,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // tbPass
             // 
-            this.tbPass.Location = new System.Drawing.Point(224, 98);
+            this.tbPass.Location = new System.Drawing.Point(188, 98);
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '*';
             this.tbPass.PlaceholderText = "Ingrese contraseña";
@@ -55,7 +55,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(233, 148);
+            this.btnIngresar.Location = new System.Drawing.Point(197, 148);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(142, 43);
             this.btnIngresar.TabIndex = 0;
@@ -67,15 +67,16 @@ namespace ParcialBrunoDeRenzis
             // 
             this.lsUsuarios.FormattingEnabled = true;
             this.lsUsuarios.ItemHeight = 15;
-            this.lsUsuarios.Location = new System.Drawing.Point(408, 39);
+            this.lsUsuarios.Location = new System.Drawing.Point(399, 37);
             this.lsUsuarios.Name = "lsUsuarios";
-            this.lsUsuarios.Size = new System.Drawing.Size(183, 94);
+            this.lsUsuarios.Size = new System.Drawing.Size(183, 154);
             this.lsUsuarios.TabIndex = 2;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(594, 203);
             this.Controls.Add(this.lsUsuarios);
             this.Controls.Add(this.btnIngresar);

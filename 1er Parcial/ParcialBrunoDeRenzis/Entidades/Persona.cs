@@ -25,5 +25,13 @@ namespace Entidades
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.Nombre}");
+            sb.AppendLine($"{this.Apellido}");
+            return sb.ToString();
+        }
     }
 }

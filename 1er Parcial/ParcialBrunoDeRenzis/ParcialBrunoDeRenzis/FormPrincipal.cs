@@ -31,5 +31,11 @@ namespace ParcialBrunoDeRenzis
         {
 
         }
+
+        private void consultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente frm = new FormCliente();
+            frm.ShowDialog();
+        }
     }
 }
