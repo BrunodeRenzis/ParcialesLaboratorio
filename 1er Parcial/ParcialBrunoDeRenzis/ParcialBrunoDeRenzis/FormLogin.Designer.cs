@@ -71,6 +71,7 @@ namespace ParcialBrunoDeRenzis
             this.lsUsuarios.Name = "lsUsuarios";
             this.lsUsuarios.Size = new System.Drawing.Size(183, 154);
             this.lsUsuarios.TabIndex = 2;
+            this.lsUsuarios.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lsUsuarios_MouseDoubleClick);
             // 
             // FormLogin
             // 

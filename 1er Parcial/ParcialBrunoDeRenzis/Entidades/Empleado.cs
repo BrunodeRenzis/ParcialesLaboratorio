@@ -9,6 +9,12 @@ namespace Entidades
     public class Empleado:Usuario
     {
         int idEmpleado;
+
+        public Empleado():base()
+        {
+
+        }
+
         public Empleado(string nombre,string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido,nombreUsuario,passUsuario,perfil)
         {
             IdEmpleado = IdAutomatico();

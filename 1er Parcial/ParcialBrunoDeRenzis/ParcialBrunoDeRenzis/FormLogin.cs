@@ -59,6 +59,17 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
-        
+        private void lsUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (Empleado empleado in PetShop.Empleados)
+            {
+                if(lsUsuarios.SelectedItem.ToString().Contains(empleado.Nombre))
+                {
+                    this.tbUser.Text=empleado.NombreUsuario;
+                    this.tbPass.Text=empleado.PassUsuario;
+
+                }
+            }
+        }
     }
 }

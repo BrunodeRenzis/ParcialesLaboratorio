@@ -13,18 +13,18 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormCliente : Form
     {
+        static FormCliente()
+        {
+            PetShop.HardcodeoClientes();
+        }
         public FormCliente()
         {
             InitializeComponent();
-            PetShop.HardcodeoClientes();
         }
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
-            foreach (Cliente cliente in PetShop.Clientes)
-            {
-                this.lsClientes.Items.Add(cliente.ToString());
-            }
+            this.dgvClientes.DataSource = PetShop.Clientes;
         }
     }
 }

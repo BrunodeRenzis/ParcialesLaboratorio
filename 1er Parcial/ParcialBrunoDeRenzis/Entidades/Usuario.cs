@@ -12,8 +12,11 @@ namespace Entidades
         string nombreUsuario;
         string passUsuario;
         EPerfil perfil;
-        
-        
+
+        public Usuario():base()
+        {
+
+        }
 
         public Usuario(string nombre, string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido)
         {
@@ -32,9 +35,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.Nombre}");
-            sb.AppendLine($"{this.Apellido}");
-            sb.AppendLine($"--{this.Perfil}");
+            sb.AppendLine($"{this.Nombre} {this.Apellido} --{this.Perfil}");
             return sb.ToString();
         }
 

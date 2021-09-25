@@ -32,6 +32,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.IdPersona}");
             sb.AppendLine($"{this.Nombre}");
             sb.AppendLine($"{this.Apellido}");
             return sb.ToString();
