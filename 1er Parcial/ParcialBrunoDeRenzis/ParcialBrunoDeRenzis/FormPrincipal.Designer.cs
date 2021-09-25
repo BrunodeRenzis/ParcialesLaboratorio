@@ -154,8 +154,9 @@ namespace ParcialBrunoDeRenzis
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
+            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // ventaToolStripMenuItem
             // 

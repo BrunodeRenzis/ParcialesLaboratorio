@@ -37,5 +37,11 @@ namespace ParcialBrunoDeRenzis
             FormCliente frm = new FormCliente();
             frm.ShowDialog();
         }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProducto frm = new FormProducto();
+            frm.ShowDialog();
+        }
     }
 }

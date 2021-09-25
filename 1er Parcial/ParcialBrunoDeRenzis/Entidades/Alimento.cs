@@ -10,7 +10,7 @@ namespace Entidades
     {
         double peso;
 
-        public Alimento(int idProducto, string nombreProducto,string marcaProducto, double precioProducto, ETipo tipo, double peso) : base(idProducto, nombreProducto,marcaProducto, precioProducto, tipo)
+        public Alimento(string nombreProducto,string marcaProducto, double precioProducto, ETipo tipo, double peso, double stock) : base(nombreProducto,marcaProducto, precioProducto, stock, tipo)
         {
             this.Peso = peso;
         }

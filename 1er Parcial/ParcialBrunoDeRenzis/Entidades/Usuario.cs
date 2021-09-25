@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario:Persona
+    public abstract class Usuario:Persona
     {
         int idUsuario;
         string nombreUsuario;
         string passUsuario;
         EPerfil perfil;
         
-        public Usuario()
-        {
-        }
+        
 
-        public Usuario(string nombre, string apellido,string nombreUsuario,string passUsuario,int idUsuario,EPerfil perfil):base(nombre,apellido)
+        public Usuario(string nombre, string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido)
         {
             this.nombreUsuario = nombreUsuario;
             this.passUsuario = passUsuario;
-            this.idUsuario = idUsuario;
+            this.idUsuario = IdAutomatico();
             this.perfil = perfil;
         }
 
@@ -38,6 +36,11 @@ namespace Entidades
             sb.AppendLine($"{this.Apellido}");
             sb.AppendLine($"--{this.Perfil}");
             return sb.ToString();
+        }
+
+        public override int IdAutomatico()
+        {
+            return base.IdAutomatico();
         }
 
 

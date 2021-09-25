@@ -12,11 +12,13 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormLogin : Form
     {
-        
+        static FormLogin()
+        {
+            PetShop.HardcodeoUsuarios();
+        }
         public FormLogin()
         {
             InitializeComponent();
-            PetShop.HardcodeoUsuarios();
         }
 
         void Limpiar()
@@ -31,9 +33,9 @@ namespace ParcialBrunoDeRenzis
         {
             FormPrincipal frmPpal = new FormPrincipal();
             bool usuarioEncontrado = false;
-            foreach (Usuario usuario in PetShop.Usuarios)
+            foreach (Empleado empleado in PetShop.Empleados)
             {
-                if(usuario.NombreUsuario==tbUser.Text && usuario.PassUsuario == tbPass.Text)
+                if(empleado.NombreUsuario==tbUser.Text && empleado.PassUsuario == tbPass.Text)
                 {
                     this.Hide();
                     frmPpal.ShowDialog();
@@ -51,9 +53,9 @@ namespace ParcialBrunoDeRenzis
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            foreach (Usuario usuario in PetShop.Usuarios)
+            foreach (Empleado empleado in PetShop.Empleados)
             {
-                this.lsUsuarios.Items.Add(usuario.ToString());
+                this.lsUsuarios.Items.Add(empleado.ToString());
             }
         }
 

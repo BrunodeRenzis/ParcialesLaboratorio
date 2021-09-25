@@ -8,5 +8,10 @@ namespace Entidades
 {
     public class Administrador : Usuario
     {
+        
+        public Administrador(string nombre,string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido,nombreUsuario,passUsuario,perfil)
+        {
+            
+        }
     }
 }

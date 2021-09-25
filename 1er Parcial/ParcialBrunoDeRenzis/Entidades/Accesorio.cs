@@ -9,7 +9,7 @@ namespace Entidades
     public class Accesorio : Producto
     {
         ETipoAccesorio tipoAccesorio;
-        public Accesorio(int idProducto, string nombreProducto, string marcaProducto, double precioProducto, ETipo tipo,ETipoAccesorio tipoAccesorio) : base(idProducto, nombreProducto, marcaProducto, precioProducto, tipo)
+        public Accesorio(string nombreProducto, string marcaProducto, double precioProducto,double stock, ETipo tipo,ETipoAccesorio tipoAccesorio) : base(nombreProducto, marcaProducto, precioProducto, stock, tipo)
         {
             this.TipoAccesorio = tipoAccesorio;
         }
