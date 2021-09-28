@@ -35,7 +35,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.Nombre} {this.Apellido} --{this.Perfil}");
+            sb.AppendLine($"{this.Nombre} {this.Apellido} -- {this.Perfil}");
             return sb.ToString();
         }
 
@@ -49,7 +49,7 @@ namespace Entidades
 
     public enum EPerfil
     {
-        Administrador,
-        Empleado
+        Empleado,
+        Administrador
     }
 }

@@ -31,5 +31,31 @@ namespace Entidades
 
             return IdEmpleado;
         }
+
+        public static List<Empleado> operator + (List<Empleado> empleados,Empleado empleado)
+        {
+            foreach (Empleado auxEmpleado in PetShop.Empleados)
+            {
+                if (empleado.IdEmpleado != auxEmpleado.idEmpleado)
+                {
+                    PetShop.Empleados.Add(empleado);
+                    return PetShop.Empleados;
+                }
+            }
+                    return PetShop.Empleados;
+        }
+
+        public static List<Empleado> operator -(List<Empleado> empleados, Empleado empleado)
+        {
+            foreach (Empleado auxEmpleado in PetShop.Empleados)
+            {
+                if (empleado.IdEmpleado == auxEmpleado.idEmpleado)
+                {
+                    PetShop.Empleados.Remove(empleado);
+                    return PetShop.Empleados;
+                }
+            }
+            return PetShop.Empleados;
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,24 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Entidades;
 namespace ParcialBrunoDeRenzis
 {
-    public partial class FormProducto : Form
+    public partial class FormVenta : Form
     {
-        static FormProducto()
-        {
-            PetShop.HardcodearProductos();
-        }
-        public FormProducto()
+        public FormVenta()
         {
             InitializeComponent();
         }
 
-        private void FormProducto_Load(object sender, EventArgs e)
+        private void FormVenta_Load(object sender, EventArgs e)
         {
             this.dgvProductos.DataSource = PetShop.Productos;
         }
-
     }
 }

@@ -5,8 +5,6 @@ namespace Entidades
 {
     public static class PetShop
     {
-        static List<Accesorio> accesorios;
-        static List<Alimento> alimentos;
         static List<Cliente> clientes;
         static List<Producto> productos;
         static List<Empleado> empleados;
@@ -34,12 +32,12 @@ namespace Entidades
 
         public static void HardcodeoClientes()
         {
-            PetShop.Clientes.Add(new Cliente(1,"Cosme","Fulanito",50000));
-            PetShop.Clientes.Add(new Cliente(2,"Petin","Partusa",30000));
-            PetShop.Clientes.Add(new Cliente(3,"Romeo Rubén","Romero",30000));
-            PetShop.Clientes.Add(new Cliente(4,"Mateo","Logía",50000));
-            PetShop.Clientes.Add(new Cliente(5,"Elba","Tracio",40000));
-            PetShop.Clientes.Add(new Cliente(6,"Susana","Door",40000));
+            PetShop.Clientes.Add(new Cliente("Cosme","Fulanito",50000));
+            PetShop.Clientes.Add(new Cliente("Petin","Partusa",30000));
+            PetShop.Clientes.Add(new Cliente("Romeo Rubén","Romero",30000));
+            PetShop.Clientes.Add(new Cliente("Mateo","Logía",50000));
+            PetShop.Clientes.Add(new Cliente("Elba","Tracio",40000));
+            PetShop.Clientes.Add(new Cliente("Susana","Door",40000));
         }
 
         public static void HardcodearProductos()
@@ -56,6 +54,7 @@ namespace Entidades
             PetShop.Productos.Add(new Accesorio("Rascador chico", "Happy Cat", 2500,14, Producto.ETipo.Accesorio, Accesorio.ETipoAccesorio.Rascador));
             PetShop.Productos.Add(new Accesorio("Rascador grande", "Happy Cat", 4500,15, Producto.ETipo.Accesorio, Accesorio.ETipoAccesorio.Rascador));
         }
+
 
 
     }

@@ -10,11 +10,11 @@ namespace Entidades
     {
         string nombre;
         string apellido;
-        int idPersona;
+        int id;
 
         public Persona()
         {
-            this.IdPersona = IdAutomatico();
+            this.Id = IdAutomatico();
             this.Nombre = String.Empty;
             this.Apellido = String.Empty;
         }
@@ -27,12 +27,11 @@ namespace Entidades
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
-        public int IdPersona { get => idPersona; set => idPersona = value; }
+        protected int Id { get => id; set => id = value; }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.IdPersona}");
             sb.AppendLine($"{this.Nombre}");
             sb.AppendLine($"{this.Apellido}");
             return sb.ToString();
@@ -42,10 +41,10 @@ namespace Entidades
         {
             for (int i = 0; i <= 1; i++)
             {
-                idPersona = i + 1;
+                id = i + 1;
             }
 
-            return idPersona;
+            return id;
         }
     }
 }

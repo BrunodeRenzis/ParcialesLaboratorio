@@ -25,6 +25,13 @@ namespace ParcialBrunoDeRenzis
         private void FormCliente_Load(object sender, EventArgs e)
         {
             this.dgvClientes.DataSource = PetShop.Clientes;
+            
+        }
+
+        private void ActualizarDataGrid()
+        {
+            this.dgvClientes.DataSource=null;
+            this.dgvClientes.DataSource = PetShop.Clientes;
         }
     }
 }

@@ -12,10 +12,36 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormPrincipal : Form
     {
+        
         public FormPrincipal()
         {
             InitializeComponent();
+            
         }
+
+        
+
+        
+
+        private void Login()
+        {
+            FormLogin frm = new FormLogin();
+            this.empleadosToolStripMenuItem.Enabled = false;
+            this.verVentasToolStripMenuItem.Enabled = false;
+            if (frm.ShowDialog() == DialogResult.Yes)
+
+            {
+                if (frm.GetEmpleado.Perfil == EPerfil.Administrador)
+                {
+                    this.empleadosToolStripMenuItem.Enabled = true;
+                    this.verVentasToolStripMenuItem.Enabled = true;
+                }
+            }
+
+            else
+                this.Close();
+        }
+
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -23,25 +49,59 @@ namespace ParcialBrunoDeRenzis
                 e.Cancel = true;
         }
 
-        void PruebaUsuarios()
-        {
-
-        }
+        
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            Login();
         }
 
-        private void consultarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+
+        
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente();
-            frm.ShowDialog();
+            FormCliente frmCli = new FormCliente();
+            frmCli.ShowDialog();
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormProducto frm = new FormProducto();
             frm.ShowDialog();
+        }
+
+        private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVenta frm = new FormVenta();
+            frm.ShowDialog();
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void altaEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNuevoEmpleado formEmp = new FormNuevoEmpleado();
+            formEmp.ShowDialog();
+        }    
+
+        private void menuPpal_MouseHover(object sender, EventArgs e)
+        {
+            menúToolStripMenuItem.ShowDropDown();
+            this.timerMenú.Enabled = false;
+            
+            if(MousePosition.X>490 || MousePosition.Y>590)
+            {
+                menúToolStripMenuItem.HideDropDown();
+            }
+        }
+
+        private void menúToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.timerMenú.Enabled = true;
+            this.timerMenú.Interval = 1500;
+            this.timerMenú.Start();
         }
     }
 }

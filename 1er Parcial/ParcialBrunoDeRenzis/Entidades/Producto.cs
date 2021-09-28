@@ -46,10 +46,10 @@ namespace Entidades
         {
             for(int i=0;i<=PetShop.Productos.Count;i++)
             {
-                idProducto = i+1;
+                IdProducto = i+1;
             }
 
-            return idProducto;
+            return IdProducto;
         }
     }
 }

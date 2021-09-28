@@ -23,3 +23,5 @@ C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Exam
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.genruntimeconfig.cache
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormCliente.resources
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormProducto.resources
+C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormVenta.resources
+C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormNuevoEmpleado.resources

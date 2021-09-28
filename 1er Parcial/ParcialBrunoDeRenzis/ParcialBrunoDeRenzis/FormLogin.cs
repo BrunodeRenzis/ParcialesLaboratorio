@@ -12,6 +12,15 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormLogin : Form
     {
+        Empleado auxEmpleado;
+        bool usuarioEncontrado = false;
+        public Empleado GetEmpleado
+        {
+            get { return auxEmpleado; }
+        }
+
+        public bool UsuarioEncontrado { get => usuarioEncontrado; set => usuarioEncontrado = value; }
+
         static FormLogin()
         {
             PetShop.HardcodeoUsuarios();
@@ -31,20 +40,19 @@ namespace ParcialBrunoDeRenzis
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            FormPrincipal frmPpal = new FormPrincipal();
-            bool usuarioEncontrado = false;
+            
             foreach (Empleado empleado in PetShop.Empleados)
             {
                 if(empleado.NombreUsuario==tbUser.Text && empleado.PassUsuario == tbPass.Text)
                 {
-                    this.Hide();
-                    frmPpal.ShowDialog();
-                    usuarioEncontrado = true;
+                    UsuarioEncontrado = true;
+                    auxEmpleado = empleado;
+                    DialogResult=DialogResult.Yes;
                     this.Close();
                 }
             }
             
-            if (!usuarioEncontrado)
+            if (!UsuarioEncontrado)
             {
                 MessageBox.Show("Usuario invalido");
                 Limpiar();
@@ -59,15 +67,14 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
-        private void lsUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void lsUsuarios_MouseClick(object sender, MouseEventArgs e)
         {
             foreach (Empleado empleado in PetShop.Empleados)
             {
-                if(lsUsuarios.SelectedItem.ToString().Contains(empleado.Nombre))
+                if (lsUsuarios.SelectedItem.ToString().Contains(empleado.Nombre))
                 {
-                    this.tbUser.Text=empleado.NombreUsuario;
-                    this.tbPass.Text=empleado.PassUsuario;
-
+                    this.tbUser.Text = empleado.NombreUsuario;
+                    this.tbPass.Text = empleado.PassUsuario;
                 }
             }
         }
