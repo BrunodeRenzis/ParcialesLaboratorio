@@ -51,5 +51,43 @@ namespace Entidades
 
             return IdProducto;
         }
+
+        public static bool operator ==(List<Producto> productos, Producto producto)
+        {
+            foreach (Producto auxProducto in PetShop.Productos)
+            {
+                if (producto == auxProducto)
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(List<Producto> productos, Producto producto)
+        {
+            return !(productos == producto);
+        }
+
+        public static List<Producto> operator +(List<Producto> productos, Producto producto)
+        {
+            if (productos != producto)
+            {
+                PetShop.Productos.Add(producto);
+                return PetShop.Productos;
+            }
+
+            else
+                return PetShop.Productos;
+        }
+
+        public static List<Producto> operator -(List<Producto> productos, Producto producto)
+        {
+            if (productos == producto)
+            {
+                PetShop.Productos.Remove(producto);
+                return PetShop.Productos;
+            }
+            else
+                return PetShop.Productos;
+        }
     }
 }

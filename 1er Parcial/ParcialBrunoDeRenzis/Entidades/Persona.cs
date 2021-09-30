@@ -14,7 +14,6 @@ namespace Entidades
 
         public Persona()
         {
-            this.Id = IdAutomatico();
             this.Nombre = String.Empty;
             this.Apellido = String.Empty;
         }
@@ -29,7 +28,7 @@ namespace Entidades
         public string Apellido { get => apellido; set => apellido = value; }
         protected int Id { get => id; set => id = value; }
 
-        public override string ToString()
+        public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.Nombre}");
@@ -37,14 +36,13 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public virtual int IdAutomatico()
+        public override string ToString()
         {
-            for (int i = 0; i <= 1; i++)
-            {
-                id = i + 1;
-            }
-
-            return id;
+            return this.Mostrar();
         }
+
+        public abstract int IdAutomatico();
+
+
     }
 }

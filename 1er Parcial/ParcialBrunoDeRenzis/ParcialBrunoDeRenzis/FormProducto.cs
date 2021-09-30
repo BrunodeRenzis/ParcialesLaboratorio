@@ -22,6 +22,12 @@ namespace ParcialBrunoDeRenzis
             InitializeComponent();
         }
 
+        private void ActualizarDataGrid()
+        {
+            this.dgvProductos.DataSource = null;
+            this.dgvProductos.DataSource = PetShop.Productos;
+        }
+
         private void FormProducto_Load(object sender, EventArgs e)
         {
             this.dgvProductos.DataSource = PetShop.Productos;

@@ -10,6 +10,7 @@ namespace Entidades
     {
         int idCliente;
         double saldo;
+        
         public Cliente(string nombre,string apellido,double saldo):base(nombre,apellido)
         {
             this.Saldo = saldo;
@@ -19,7 +20,7 @@ namespace Entidades
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public double Saldo { get => saldo; set => saldo = value; }
 
-        public override string ToString()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
@@ -37,7 +38,45 @@ namespace Entidades
             return IdCliente;
         }
 
-        
-        
+        public static List<Cliente> operator +(List<Cliente> clientes, Cliente cliente)
+        {
+            if (clientes != cliente)
+            {
+                PetShop.Clientes.Add(cliente);
+                return PetShop.Clientes;
+            }
+            else
+                return PetShop.Clientes;
+        }
+
+        public static List<Cliente> operator -(List<Cliente> clientes, Cliente cliente)
+        {
+
+            if (clientes == cliente)
+            {
+                PetShop.Clientes.Remove(cliente);
+                return PetShop.Clientes;
+            }
+            else
+                return PetShop.Clientes;
+        }
+
+        public static bool operator ==(List<Cliente> clientes, Cliente cliente)
+        {
+            foreach (Cliente auxCliente in PetShop.Clientes)
+            {
+                if (cliente == auxCliente)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public static bool operator !=(List<Cliente> clientes, Cliente cliente)
+        {
+            return !(clientes == cliente);
+        }
+
+
     }
 }

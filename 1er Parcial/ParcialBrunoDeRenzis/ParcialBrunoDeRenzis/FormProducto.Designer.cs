@@ -46,10 +46,10 @@ namespace ParcialBrunoDeRenzis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 332);
             this.Controls.Add(this.dgvProductos);
             this.Name = "FormProducto";
-            this.Text = "FormProducto";
+            this.Text = "W";
             this.Load += new System.EventHandler(this.FormProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);

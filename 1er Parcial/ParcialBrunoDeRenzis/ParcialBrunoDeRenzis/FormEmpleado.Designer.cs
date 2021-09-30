@@ -1,7 +1,7 @@
 ﻿
 namespace ParcialBrunoDeRenzis
 {
-    partial class FormNuevoEmpleado
+    partial class FormEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,8 @@ namespace ParcialBrunoDeRenzis
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lsEmpleados = new System.Windows.Forms.ListBox();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -90,7 +92,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(171, 186);
+            this.btnRegistrar.Location = new System.Drawing.Point(119, 186);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(88, 43);
             this.btnRegistrar.TabIndex = 7;
@@ -106,12 +108,35 @@ namespace ParcialBrunoDeRenzis
             this.lsEmpleados.Name = "lsEmpleados";
             this.lsEmpleados.Size = new System.Drawing.Size(239, 109);
             this.lsEmpleados.TabIndex = 8;
+            this.lsEmpleados.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsEmpleados_MouseClick);
             // 
-            // FormNuevoEmpleado
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(268, 186);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(88, 43);
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(433, 186);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 43);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 287);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lsEmpleados);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cmbRol);
@@ -120,7 +145,7 @@ namespace ParcialBrunoDeRenzis
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "FormNuevoEmpleado";
+            this.Name = "FormEmpleado";
             this.Text = "FormEmpleado";
             this.Load += new System.EventHandler(this.FormEmpleado_Load);
             this.ResumeLayout(false);
@@ -138,5 +163,7 @@ namespace ParcialBrunoDeRenzis
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.ListBox lsEmpleados;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -32,7 +32,7 @@ namespace Entidades
         public string PassUsuario { get => passUsuario; set => passUsuario = value; }     
 
         
-        public override string ToString()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.Nombre} {this.Apellido} -- {this.Perfil}");
@@ -41,7 +41,12 @@ namespace Entidades
 
         public override int IdAutomatico()
         {
-            return base.IdAutomatico();
+            for (int i = 0; i <= PetShop.Clientes.Count; i++)
+            {
+                IdUsuario = i + 1;
+            }
+
+            return IdUsuario;
         }
 
 

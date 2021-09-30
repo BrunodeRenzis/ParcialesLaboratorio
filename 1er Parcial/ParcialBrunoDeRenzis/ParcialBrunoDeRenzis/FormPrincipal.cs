@@ -80,12 +80,7 @@ namespace ParcialBrunoDeRenzis
             
         }
 
-        private void altaEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormNuevoEmpleado formEmp = new FormNuevoEmpleado();
-            formEmp.ShowDialog();
-        }    
-
+       
         private void menuPpal_MouseHover(object sender, EventArgs e)
         {
             menúToolStripMenuItem.ShowDropDown();
@@ -102,6 +97,12 @@ namespace ParcialBrunoDeRenzis
             this.timerMenú.Enabled = true;
             this.timerMenú.Interval = 1500;
             this.timerMenú.Start();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEmpleado formEmp = new FormEmpleado();
+            formEmp.ShowDialog();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Entidades
 
         public Empleado():base()
         {
-
         }
 
         public Empleado(string nombre,string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido,nombreUsuario,passUsuario,perfil)
@@ -34,28 +33,46 @@ namespace Entidades
 
         public static List<Empleado> operator + (List<Empleado> empleados,Empleado empleado)
         {
-            foreach (Empleado auxEmpleado in PetShop.Empleados)
-            {
-                if (empleado.IdEmpleado != auxEmpleado.idEmpleado)
+                if (empleados != empleado)
                 {
                     PetShop.Empleados.Add(empleado);
                     return PetShop.Empleados;
                 }
-            }
+                else
                     return PetShop.Empleados;
         }
 
         public static List<Empleado> operator -(List<Empleado> empleados, Empleado empleado)
         {
-            foreach (Empleado auxEmpleado in PetShop.Empleados)
-            {
-                if (empleado.IdEmpleado == auxEmpleado.idEmpleado)
+            
+                if (empleados == empleado)
                 {
                     PetShop.Empleados.Remove(empleado);
                     return PetShop.Empleados;
                 }
+                else
+                    return PetShop.Empleados;
+        }
+
+        public static bool operator == (List<Empleado> empleados, Empleado empleado)
+        {
+            foreach (Empleado auxEmpleado in PetShop.Empleados)
+            {
+                if (empleado == auxEmpleado)
+                    return true;
             }
-            return PetShop.Empleados;
+
+            return false;
+        }
+
+        public static bool operator !=(List<Empleado> empleados, Empleado empleado)
+        {
+            return !(empleados==empleado);
+        }
+
+        public override string Mostrar()
+        {
+            return base.Mostrar();
         }
     }
 }

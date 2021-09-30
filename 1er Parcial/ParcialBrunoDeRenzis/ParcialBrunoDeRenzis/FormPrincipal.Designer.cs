@@ -35,10 +35,6 @@ namespace ParcialBrunoDeRenzis
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónEmpleadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónEmpleadoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.verEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,39 +78,10 @@ namespace ParcialBrunoDeRenzis
             // 
             // empleadosToolStripMenuItem
             // 
-            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaEmpleadoToolStripMenuItem,
-            this.modificaciónEmpleadoToolStripMenuItem1,
-            this.modificaciónEmpleadoToolStripMenuItem2,
-            this.verEmpleadoToolStripMenuItem});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
-            // 
-            // altaEmpleadoToolStripMenuItem
-            // 
-            this.altaEmpleadoToolStripMenuItem.Name = "altaEmpleadoToolStripMenuItem";
-            this.altaEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.altaEmpleadoToolStripMenuItem.Text = "Alta Empleado";
-            this.altaEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.altaEmpleadoToolStripMenuItem_Click);
-            // 
-            // modificaciónEmpleadoToolStripMenuItem1
-            // 
-            this.modificaciónEmpleadoToolStripMenuItem1.Name = "modificaciónEmpleadoToolStripMenuItem1";
-            this.modificaciónEmpleadoToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
-            this.modificaciónEmpleadoToolStripMenuItem1.Text = "Modificación Empleado";
-            // 
-            // modificaciónEmpleadoToolStripMenuItem2
-            // 
-            this.modificaciónEmpleadoToolStripMenuItem2.Name = "modificaciónEmpleadoToolStripMenuItem2";
-            this.modificaciónEmpleadoToolStripMenuItem2.Size = new System.Drawing.Size(200, 22);
-            this.modificaciónEmpleadoToolStripMenuItem2.Text = "Baja Empleado";
-            // 
-            // verEmpleadoToolStripMenuItem
-            // 
-            this.verEmpleadoToolStripMenuItem.Name = "verEmpleadoToolStripMenuItem";
-            this.verEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.verEmpleadoToolStripMenuItem.Text = "Ver Empleado";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -182,10 +149,6 @@ namespace ParcialBrunoDeRenzis
         private System.Windows.Forms.ToolStripMenuItem menúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificaciónEmpleadoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificaciónEmpleadoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem verEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
