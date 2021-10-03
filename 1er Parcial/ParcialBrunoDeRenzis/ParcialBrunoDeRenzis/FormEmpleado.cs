@@ -102,7 +102,26 @@ namespace ParcialBrunoDeRenzis
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            bool empleadoModificado = false;
+            bool esAdministrador = true;
+            foreach (Empleado empleado in PetShop.Empleados)
+            {
+                if (lsEmpleados.SelectedItem.ToString().Contains(empleado.Nombre) && lsEmpleados.SelectedItem.ToString().Contains(empleado.Apellido) && empleado.Perfil != EPerfil.Administrador)
+                {
+                    empleado.Nombre = this.txtBoxNombre.Text;
+                    empleado.Apellido = this.txtBoxApellido.Text;
+                    empleado.Perfil = (EPerfil)this.cmbRol.SelectedValue;
+                    empleadoModificado = true;
+                    esAdministrador = false;
+                    ActualizarListaEmpleados();
+                }
+            }
 
+            if(!empleadoModificado && !esAdministrador)
+                MessageBox.Show("Ha habido un error al intentar modificar el empleado");
+
+            if (esAdministrador && !empleadoModificado)
+                MessageBox.Show("No se puede modificar datos de un administrador");
         }
     }
 }

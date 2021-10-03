@@ -28,6 +28,7 @@ namespace ParcialBrunoDeRenzis
             FormLogin frm = new FormLogin();
             this.empleadosToolStripMenuItem.Enabled = false;
             this.verVentasToolStripMenuItem.Enabled = false;
+            this.BackColor = Color.DarkTurquoise;
             if (frm.ShowDialog() == DialogResult.Yes)
 
             {
@@ -35,6 +36,7 @@ namespace ParcialBrunoDeRenzis
                 {
                     this.empleadosToolStripMenuItem.Enabled = true;
                     this.verVentasToolStripMenuItem.Enabled = true;
+                    this.BackColor = Color.Goldenrod;
                 }
             }
 
@@ -103,6 +105,12 @@ namespace ParcialBrunoDeRenzis
         {
             FormEmpleado formEmp = new FormEmpleado();
             formEmp.ShowDialog();
+        }
+
+        private void verVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVentasRealizadas frmVentasRealizadas = new FormVentasRealizadas();
+            frmVentasRealizadas.ShowDialog();
         }
     }
 }

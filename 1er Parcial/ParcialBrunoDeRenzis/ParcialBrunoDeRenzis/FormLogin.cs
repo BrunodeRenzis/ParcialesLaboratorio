@@ -13,13 +13,13 @@ namespace ParcialBrunoDeRenzis
     public partial class FormLogin : Form
     {
         Empleado auxEmpleado;
-        bool usuarioEncontrado = false;
+        bool usuarioLogueado = false;
         public Empleado GetEmpleado
         {
             get { return auxEmpleado; }
         }
 
-        public bool UsuarioEncontrado { get => usuarioEncontrado; set => usuarioEncontrado = value; }
+        public bool UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
 
         static FormLogin()
         {
@@ -45,14 +45,14 @@ namespace ParcialBrunoDeRenzis
             {
                 if(empleado.NombreUsuario==tbUser.Text && empleado.PassUsuario == tbPass.Text)
                 {
-                    UsuarioEncontrado = true;
+                    UsuarioLogueado = true;
                     auxEmpleado = empleado;
                     DialogResult=DialogResult.Yes;
                     this.Close();
                 }
             }
             
-            if (!UsuarioEncontrado)
+            if (!UsuarioLogueado)
             {
                 MessageBox.Show("Usuario invalido");
                 Limpiar();
@@ -63,7 +63,7 @@ namespace ParcialBrunoDeRenzis
         {
             foreach (Empleado empleado in PetShop.Empleados)
             {
-                this.lsUsuarios.Items.Add(empleado.ToString());
+                this.lsEmpleados.Items.Add(empleado.ToString());
             }
         }
 
@@ -71,7 +71,7 @@ namespace ParcialBrunoDeRenzis
         {
             foreach (Empleado empleado in PetShop.Empleados)
             {
-                if (lsUsuarios.SelectedItem.ToString().Contains(empleado.Nombre))
+                if (lsEmpleados.SelectedItem.ToString().Contains(empleado.Nombre))
                 {
                     this.tbUser.Text = empleado.NombreUsuario;
                     this.tbPass.Text = empleado.PassUsuario;

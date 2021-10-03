@@ -28,10 +28,31 @@ namespace ParcialBrunoDeRenzis
             this.dgvProductos.DataSource = PetShop.Productos;
         }
 
+        List<Producto> ProductoFiltrado(List<Producto> productosFiltrados)
+        {
+            foreach (Producto producto in PetShop.Productos)
+            {
+                if (producto.NombreProducto.Contains(tbProducto.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    productosFiltrados.Add(producto);
+                }
+            }
+
+            return productosFiltrados;
+        }
+
         private void FormProducto_Load(object sender, EventArgs e)
         {
             this.dgvProductos.DataSource = PetShop.Productos;
+            
         }
 
+        
+
+        private void tbProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<Producto> productosFiltrados = new List<Producto>();
+            this.dgvProductos.DataSource = ProductoFiltrado(productosFiltrados);
+        }
     }
 }

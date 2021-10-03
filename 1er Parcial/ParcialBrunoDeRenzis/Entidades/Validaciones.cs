@@ -16,6 +16,18 @@ namespace Entidades
             return true;
         }
 
+        public static bool EsCliente()
+        {
+            bool esCliente = true;
+            foreach(Cliente cliente in PetShop.Clientes)
+            {
+                if (PetShop.Clientes!=cliente)
+                    esCliente = false;
+            }
+            return esCliente;
+        }
+
+
         
     }
 }

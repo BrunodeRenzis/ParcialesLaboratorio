@@ -26,3 +26,4 @@ C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Exam
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormVenta.resources
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormEmpleado.resources
 C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormNuevoCliente.resources
+C:\Users\Bruno de Renzis\Desktop\BUCKUP\PROGRAMACION\UTN.TEC.PROG\Prog&Lab2\Examenes Labo2\1er Parcial\ParcialBrunoDeRenzis\ParcialBrunoDeRenzis\obj\Debug\net5.0-windows\ParcialBrunoDeRenzis.FormVentasRealizadas.resources

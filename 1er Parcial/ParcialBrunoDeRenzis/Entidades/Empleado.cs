@@ -14,6 +14,12 @@ namespace Entidades
         {
         }
 
+        public Empleado(string nombre,string apellido):this()
+        {
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+        }
+
         public Empleado(string nombre,string apellido,string nombreUsuario,string passUsuario,EPerfil perfil):base(nombre,apellido,nombreUsuario,passUsuario,perfil)
         {
             IdEmpleado = IdAutomatico();
@@ -72,7 +78,11 @@ namespace Entidades
 
         public override string Mostrar()
         {
-            return base.Mostrar();
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{IdEmpleado}, ");
+            sb.Append(base.Mostrar());
+
+            return sb.ToString();
         }
     }
 }

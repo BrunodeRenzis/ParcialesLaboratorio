@@ -12,6 +12,10 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormVenta : Form
     {
+        static FormVenta()
+        {
+            PetShop.HardcodearProductos();
+        }
         public FormVenta()
         {
             InitializeComponent();

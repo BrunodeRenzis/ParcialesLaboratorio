@@ -33,7 +33,7 @@ namespace ParcialBrunoDeRenzis
             this.tbUser = new System.Windows.Forms.TextBox();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.lsUsuarios = new System.Windows.Forms.ListBox();
+            this.lsEmpleados = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // tbUser
@@ -63,15 +63,15 @@ namespace ParcialBrunoDeRenzis
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // lsUsuarios
+            // lsEmpleados
             // 
-            this.lsUsuarios.FormattingEnabled = true;
-            this.lsUsuarios.ItemHeight = 15;
-            this.lsUsuarios.Location = new System.Drawing.Point(399, 37);
-            this.lsUsuarios.Name = "lsUsuarios";
-            this.lsUsuarios.Size = new System.Drawing.Size(183, 154);
-            this.lsUsuarios.TabIndex = 2;
-            this.lsUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsUsuarios_MouseClick);
+            this.lsEmpleados.FormattingEnabled = true;
+            this.lsEmpleados.ItemHeight = 15;
+            this.lsEmpleados.Location = new System.Drawing.Point(399, 37);
+            this.lsEmpleados.Name = "lsEmpleados";
+            this.lsEmpleados.Size = new System.Drawing.Size(183, 154);
+            this.lsEmpleados.TabIndex = 2;
+            this.lsEmpleados.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsUsuarios_MouseClick);
             // 
             // FormLogin
             // 
@@ -79,7 +79,7 @@ namespace ParcialBrunoDeRenzis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(594, 203);
-            this.Controls.Add(this.lsUsuarios);
+            this.Controls.Add(this.lsEmpleados);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.tbPass);
             this.Controls.Add(this.tbUser);
@@ -98,6 +98,6 @@ namespace ParcialBrunoDeRenzis
         private System.Windows.Forms.TextBox tbUser;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.ListBox lsUsuarios;
+        private System.Windows.Forms.ListBox lsEmpleados;
     }
 }

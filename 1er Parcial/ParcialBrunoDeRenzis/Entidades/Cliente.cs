@@ -10,15 +10,19 @@ namespace Entidades
     {
         int idCliente;
         double saldo;
+        bool clienteActual;
         
         public Cliente(string nombre,string apellido,double saldo):base(nombre,apellido)
         {
             this.Saldo = saldo;
+            this.ClienteActual = Validaciones.EsCliente();
+            this.IdCliente = IdAutomatico();
         }
 
         
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public double Saldo { get => saldo; set => saldo = value; }
+        public bool ClienteActual { get => clienteActual; set => clienteActual = value; }
 
         public override string Mostrar()
         {
