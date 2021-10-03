@@ -13,13 +13,13 @@ namespace ParcialBrunoDeRenzis
     public partial class FormLogin : Form
     {
         Empleado auxEmpleado;
-        bool usuarioLogueado = false;
+        static bool usuarioLogueado = false;
         public Empleado GetEmpleado
         {
             get { return auxEmpleado; }
         }
 
-        public bool UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
+        public static bool UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
 
         static FormLogin()
         {

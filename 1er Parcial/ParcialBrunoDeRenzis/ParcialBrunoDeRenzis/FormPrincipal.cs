@@ -12,16 +12,12 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormPrincipal : Form
     {
-        
+
         public FormPrincipal()
         {
             InitializeComponent();
-            
+
         }
-
-        
-
-        
 
         private void Login()
         {
@@ -29,8 +25,7 @@ namespace ParcialBrunoDeRenzis
             this.empleadosToolStripMenuItem.Enabled = false;
             this.verVentasToolStripMenuItem.Enabled = false;
             this.BackColor = Color.DarkTurquoise;
-            if (frm.ShowDialog() == DialogResult.Yes)
-
+            if (frm.ShowDialog() == DialogResult.Yes && FormLogin.UsuarioLogueado)
             {
                 if (frm.GetEmpleado.Perfil == EPerfil.Administrador)
                 {
@@ -79,7 +74,7 @@ namespace ParcialBrunoDeRenzis
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FormLogin.UsuarioLogueado = false;
         }
 
        
