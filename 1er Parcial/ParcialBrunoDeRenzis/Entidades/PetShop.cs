@@ -9,6 +9,7 @@ namespace Entidades
         static List<Producto> productos;
         static List<Empleado> empleados;
         static List<Venta> ventas;
+        static Empleado empleado;
 
         static PetShop()
         {
@@ -16,12 +17,14 @@ namespace Entidades
             Clientes = new List<Cliente>();
             Empleados = new List<Empleado>();
             Ventas = new List<Venta>();
+            Empleado = new Empleado();
         }
 
         public static List<Cliente> Clientes { get => clientes; set => clientes = value; }
         public static List<Empleado> Empleados { get => empleados; set => empleados = value; }
         public static List<Venta> Ventas { get => ventas; set => ventas = value; }
         public static List<Producto> Productos { get => productos; set => productos = value; }
+        public static Empleado Empleado { get => empleado; set => empleado = value; }
 
         public static void HardcodeoUsuarios()
         {
@@ -61,9 +64,8 @@ namespace Entidades
         {
             Producto prod1 = new Alimento("Power Balance", "Dog Chow", 4000, Producto.ETipo.Alimento, 7, 20);
             
-            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Cosme", "Fulanito", 50000),2500, new List<Producto> {prod1});
-            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Susana", "Horia", 10000), 5000, new List<Producto> { prod1 });
-            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Pepper", "Clemens", 20000), 10000, new List<Producto> { prod1 });
+            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Cosme", "Fulanito", 50000),4000, new List<Producto> {prod1});
+            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Cosme", "Fulanito", 50000), 4000, new List<Producto> { prod1 });
         }
 
 

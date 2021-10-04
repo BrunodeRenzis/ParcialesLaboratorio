@@ -33,8 +33,8 @@ namespace Entidades
             this.NroVenta = idVenta;
             this.Empleado = empleado;
             this.Cliente = cliente;
-            this.Monto = monto;
             this.Productos = productos;
+            this.Monto = monto;
         }
 
         /// <summary>
@@ -48,7 +48,6 @@ namespace Entidades
             this.NroVenta = idVenta;
             this.Empleado = empleado;
             this.Cliente = cliente;
-            this.Monto = CalcularMonto();
             this.Productos = productos;
         }
 
@@ -58,15 +57,19 @@ namespace Entidades
         public double Monto { get => monto; set => monto = value; }
         public List<Producto> Productos { get => productos; set => productos = value; }
 
-        double CalcularMonto()
+        
+
+        public double CalcularMonto(int cantidad)
         {
             double monto = 0;
-            for(int i=0;i<Productos.Count;i++)
+            for (int i = 0; i < Productos.Count; i++)
             {
-                monto += Productos[i].PrecioProducto;
+                monto += Productos[i].PrecioProducto*cantidad;
             }
             return monto;
         }
+
+        
 
         public static bool operator ==(List<Venta> productos, Venta producto)
         {
@@ -99,10 +102,15 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"Venta {NroVenta}");
-            sb.Append($"Empleado {Empleado.Nombre} {Empleado.Apellido}");
-            sb.AppendLine($"{Productos}");
-            sb.AppendLine($"Valor total: {Monto}");
+            sb.AppendLine($"Venta {NroVenta}    ");
+            sb.AppendLine($"Empleado {Empleado.Nombre} {Empleado.Apellido}    ");
+            sb.AppendLine($"Cliente {Cliente.Nombre} {Cliente.Apellido}    ");
+            sb.AppendLine("Productos: ");
+            foreach (Producto producto in Productos)
+            {
+                sb.AppendLine($"{producto.NombreProducto}    ");
+            }
+            sb.AppendLine($"Valor total: {Monto}\n");
             return sb.ToString();
         }
     }

@@ -12,6 +12,9 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormPrincipal : Form
     {
+        Empleado empleadoLogueado;
+
+        public Empleado EmpleadoLogueado { get => empleadoLogueado; set => empleadoLogueado = value; }
 
         public FormPrincipal()
         {
@@ -27,6 +30,7 @@ namespace ParcialBrunoDeRenzis
             this.BackColor = Color.DarkTurquoise;
             if (frm.ShowDialog() == DialogResult.Yes && FormLogin.UsuarioLogueado)
             {
+                PetShop.Empleado = frm.GetEmpleado;
                 if (frm.GetEmpleado.Perfil == EPerfil.Administrador)
                 {
                     this.empleadosToolStripMenuItem.Enabled = true;
@@ -50,6 +54,8 @@ namespace ParcialBrunoDeRenzis
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             Login();
+            if (!Validaciones.ListaInicializada(PetShop.Productos.Count))
+                PetShop.HardcodearProductos();
         }
 
 

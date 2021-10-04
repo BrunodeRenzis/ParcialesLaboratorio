@@ -26,7 +26,10 @@ namespace ParcialBrunoDeRenzis
             foreach (Venta venta in PetShop.Ventas)
             {
                 this.lsVentas.Items.Add(venta.ToString());
+                lblFacturacion.Text = $"Facturación total: {Validaciones.CajaTotal()}";
             }
         }
+
+        
     }
 }

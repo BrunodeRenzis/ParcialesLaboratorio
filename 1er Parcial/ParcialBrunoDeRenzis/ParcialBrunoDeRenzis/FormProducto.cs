@@ -15,7 +15,8 @@ namespace ParcialBrunoDeRenzis
     {
         static FormProducto()
         {
-            PetShop.HardcodearProductos();
+            if (!Validaciones.ListaInicializada(PetShop.Productos.Count))
+                PetShop.HardcodearProductos();
         }
         public FormProducto()
         {

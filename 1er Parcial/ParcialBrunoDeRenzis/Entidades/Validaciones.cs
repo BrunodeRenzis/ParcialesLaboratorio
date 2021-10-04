@@ -27,6 +27,49 @@ namespace Entidades
             return esCliente;
         }
 
+        public static bool ListaInicializada(int objetosLista)
+        {
+            if (objetosLista > 0)
+                return true;
+
+            return false;
+        }
+
+        public static bool HayStock(Producto producto,double cantidad)
+        {
+            foreach (Producto productoLista in PetShop.Productos)
+            {
+                if (producto.IdProducto == productoLista.IdProducto && producto.Stock - cantidad >= 0)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public static Cliente SaldoDisponible(double montoVenta, Cliente cliente)
+        {
+            foreach (Cliente auxCliente in PetShop.Clientes)
+            {
+                if(cliente.IdCliente == auxCliente.IdCliente && cliente.Saldo-montoVenta>0)
+                {
+                    cliente.Saldo -= montoVenta;
+                }
+            }
+            return cliente;
+        }
+
+        public static double CajaTotal()
+        {
+            double montoTotal = 0;
+            foreach (Venta venta in PetShop.Ventas)
+            {
+                montoTotal += venta.Monto;
+            }
+
+            return montoTotal;
+        }
+
+
 
         
     }

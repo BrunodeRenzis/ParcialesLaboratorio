@@ -11,7 +11,14 @@ namespace Entidades
         int idCliente;
         double saldo;
         bool clienteActual;
-        
+
+        public Cliente():base()
+        {
+            this.idCliente = 0;
+            this.saldo = 0;
+            this.clienteActual = false;
+        }
+
         public Cliente(string nombre,string apellido,double saldo):base(nombre,apellido)
         {
             this.Saldo = saldo;
