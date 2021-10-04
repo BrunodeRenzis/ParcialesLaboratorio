@@ -49,7 +49,6 @@ namespace ParcialBrunoDeRenzis
                     clientesFiltrados.Add(cliente);
                 }
             }
-
             return clientesFiltrados;
         }
 
