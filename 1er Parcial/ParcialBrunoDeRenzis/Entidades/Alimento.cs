@@ -16,5 +16,16 @@ namespace Entidades
         }
 
         public double Peso { get => peso; set => peso = value; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Producto alimento in PetShop.Productos)
+            {
+                sb.AppendLine($"{base.ToString()}");
+                sb.AppendLine($"{this.Peso}");
+            }
+            return sb.ToString();
+        }
     }
 }

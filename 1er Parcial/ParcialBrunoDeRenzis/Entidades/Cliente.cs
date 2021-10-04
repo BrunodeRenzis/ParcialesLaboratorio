@@ -9,33 +9,24 @@ namespace Entidades
     public class Cliente:Persona
     {
         int idCliente;
-        double saldo;
-        bool clienteActual;
 
         public Cliente():base()
         {
             this.idCliente = 0;
-            this.saldo = 0;
-            this.clienteActual = false;
         }
 
-        public Cliente(string nombre,string apellido,double saldo):base(nombre,apellido)
+        public Cliente(string nombre,string apellido):base(nombre,apellido)
         {
-            this.Saldo = saldo;
-            this.ClienteActual = Validaciones.EsCliente();
             this.IdCliente = IdAutomatico();
         }
 
         
         public int IdCliente { get => idCliente; set => idCliente = value; }
-        public double Saldo { get => saldo; set => saldo = value; }
-        public bool ClienteActual { get => clienteActual; set => clienteActual = value; }
 
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
-            sb.AppendLine($"{this.Saldo}");
             return sb.ToString();
         }
 

@@ -53,6 +53,17 @@ namespace ParcialBrunoDeRenzis
             this.dgvClientes.DataSource = PetShop.Clientes;
         }
 
+        void ActualizarListaVenta()
+        {
+            this.lsProductosVenta.DataSource = null;
+            this.lsProductosVenta.DataSource = listaCompra;
+        }
+
+        void LimpiarListaProductos()
+        {
+            this.lsProductosVenta.DataSource = null;
+        }
+
         private void btnAgregarAVenta_Click(object sender, EventArgs e)
         {
             bool hayStock = false;
@@ -69,6 +80,7 @@ namespace ParcialBrunoDeRenzis
                             listaCompra.Add(item);
                             hayStock = true;
                             ActualizarDataGridProductos();
+                            ActualizarListaVenta();
                         }
 
                         if (!hayStock)
@@ -92,17 +104,40 @@ namespace ParcialBrunoDeRenzis
                 unCliente.Apellido = this.dgvClientes.CurrentRow.Cells["Apellido"].Value.ToString();
                 Venta unaVenta = new Venta(PetShop.Empleado, unCliente, listaCompra);
                 unaVenta.Monto = unaVenta.CalcularMonto(int.Parse(this.txtBoxCantidad.Text));
-                unCliente.Saldo -= unaVenta.CalcularMonto(int.Parse(this.txtBoxCantidad.Text));
                 PetShop.Ventas.Add(unaVenta);
                 ActualizarDataGridClientes();
+                LimpiarListaProductos();
                 sonidoVenta.Play();
+                listaCompra = new List<Producto>();
+                unaVenta = new Venta(); 
             }
 
             else
+            {
                 MessageBox.Show("No se ha efectuado la venta por que no hay productos en ella");
+                LimpiarListaProductos();
+                listaCompra = new List<Producto>();
+            }
 
         }
 
-       
+        List<Producto> ProductoFiltrado(List<Producto> productosFiltrados)
+        {
+            foreach (Producto producto in PetShop.Productos)
+            {
+                if (producto.NombreProducto.Contains(tbProducto.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    productosFiltrados.Add(producto);
+                }
+            }
+
+            return productosFiltrados;
+        }
+
+        private void tbProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<Producto> productosFiltrados = new List<Producto>();
+            this.dgvProductos.DataSource = ProductoFiltrado(productosFiltrados);
+        }
     }
 }

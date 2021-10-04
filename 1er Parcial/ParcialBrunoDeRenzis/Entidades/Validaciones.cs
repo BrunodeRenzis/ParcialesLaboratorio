@@ -16,16 +16,7 @@ namespace Entidades
             return true;
         }
 
-        public static bool EsCliente()
-        {
-            bool esCliente = true;
-            foreach(Cliente cliente in PetShop.Clientes)
-            {
-                if (PetShop.Clientes!=cliente)
-                    esCliente = false;
-            }
-            return esCliente;
-        }
+        
 
         public static bool ListaInicializada(int objetosLista)
         {
@@ -46,17 +37,7 @@ namespace Entidades
             return false;
         }
 
-        public static Cliente SaldoDisponible(double montoVenta, Cliente cliente)
-        {
-            foreach (Cliente auxCliente in PetShop.Clientes)
-            {
-                if(cliente.IdCliente == auxCliente.IdCliente && cliente.Saldo-montoVenta>0)
-                {
-                    cliente.Saldo -= montoVenta;
-                }
-            }
-            return cliente;
-        }
+        
 
         public static double CajaTotal()
         {

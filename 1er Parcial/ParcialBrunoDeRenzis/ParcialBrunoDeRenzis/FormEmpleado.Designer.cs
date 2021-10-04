@@ -29,6 +29,7 @@ namespace ParcialBrunoDeRenzis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpleado));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(119, 186);
+            this.btnRegistrar.Location = new System.Drawing.Point(43, 186);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(88, 43);
             this.btnRegistrar.TabIndex = 7;
@@ -112,7 +113,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(268, 186);
+            this.btnModificar.Location = new System.Drawing.Point(282, 186);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(88, 43);
             this.btnModificar.TabIndex = 9;
@@ -122,7 +123,7 @@ namespace ParcialBrunoDeRenzis
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(433, 186);
+            this.btnEliminar.Location = new System.Drawing.Point(525, 186);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 43);
             this.btnEliminar.TabIndex = 10;
@@ -134,6 +135,7 @@ namespace ParcialBrunoDeRenzis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(648, 287);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -145,8 +147,10 @@ namespace ParcialBrunoDeRenzis
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEmpleado";
-            this.Text = "FormEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.FormEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

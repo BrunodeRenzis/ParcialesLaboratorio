@@ -35,14 +35,15 @@ namespace Entidades
 
         public static void HardcodeoClientes()
         {
-            PetShop.Clientes+=new Cliente("Cosme","Fulanito",50000);
-            PetShop.Clientes+=new Cliente("Petin","Partusa",30000);
-            PetShop.Clientes+=new Cliente("Romeo Rubén","Romero",30000);
-            PetShop.Clientes+=new Cliente("Mateo","Logía",50000);
-            PetShop.Clientes+=new Cliente("Elba","Rack Obama",20000);
-            PetShop.Clientes+=new Cliente("Esther","Píscore",50000);
-            PetShop.Clientes+=new Cliente("Elba","Tracio",40000);
-            PetShop.Clientes+=new Cliente("Susana","Door",40000);
+            PetShop.Clientes+=new Cliente("Cosme","Fulanito");
+            PetShop.Clientes+=new Cliente("Petin","Partusa");
+            PetShop.Clientes+=new Cliente("Romeo Rubén","Romero");
+            PetShop.Clientes+=new Cliente("Mateo","Logía");
+            PetShop.Clientes+=new Cliente("Elba","RackObama");
+            PetShop.Clientes+=new Cliente("Elba","Tman");
+            PetShop.Clientes+=new Cliente("Esther","Píscore");
+            PetShop.Clientes+=new Cliente("Elba","Tracio");
+            PetShop.Clientes+=new Cliente("Susana","Door");
         }
 
         public static void HardcodearProductos()
@@ -64,8 +65,9 @@ namespace Entidades
         {
             Producto prod1 = new Alimento("Power Balance", "Dog Chow", 4000, Producto.ETipo.Alimento, 7, 20);
             
-            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Cosme", "Fulanito", 50000),4000, new List<Producto> {prod1});
-            PetShop.Ventas += new Venta(new Empleado("Bruno", "de Renzis", "bderenzis", "bruno2021", EPerfil.Administrador), new Cliente("Cosme", "Fulanito", 50000), 4000, new List<Producto> { prod1 });
+            PetShop.Ventas += new Venta(Empleado, new Cliente("Cosme", "Fulanito"),4000, new List<Producto> {prod1});
+            PetShop.Ventas += new Venta(Empleado, new Cliente("Artigas", "Malagesio"), 4000, new List<Producto> { prod1 });
+            PetShop.Ventas += new Venta(new Empleado("Lucas", "Rodriguez", "lrodriguez", "lucas2021", EPerfil.Empleado), new Cliente("Ruben", "Barbosa"), 4000, new List<Producto> { prod1 });
         }
 
 

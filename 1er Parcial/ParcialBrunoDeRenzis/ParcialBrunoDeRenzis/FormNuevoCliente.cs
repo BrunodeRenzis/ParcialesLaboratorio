@@ -17,7 +17,6 @@ namespace ParcialBrunoDeRenzis
         {
             this.tbNombre.Text = String.Empty;
             this.tbApellido.Text = String.Empty;
-            this.tbSaldo.Text = String.Empty;
         }
         public FormNuevoCliente()
         {
@@ -26,25 +25,15 @@ namespace ParcialBrunoDeRenzis
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(!Validaciones.NotEmptyString(this.tbNombre.Text, this.tbApellido.Text,this.tbSaldo.Text))
+            if(!Validaciones.NotEmptyString(this.tbNombre.Text, this.tbApellido.Text))
             {
                 MessageBox.Show("Faltan campos que completar antes de agregar cliente");
                 Limpiar();
             }
             else
             {
-                double saldo;
-                if(double.TryParse(this.tbSaldo.Text, out saldo))
-                {
-                    PetShop.Clientes.Add(new Cliente(this.tbNombre.Text, this.tbApellido.Text, saldo));
+                    PetShop.Clientes.Add(new Cliente(this.tbNombre.Text, this.tbApellido.Text));
                     this.Close();
-                }
-
-                else
-                {
-                    MessageBox.Show("No se ha ingresado un valor de saldo correcto");
-                    Limpiar();
-                }
             }
         }
     }

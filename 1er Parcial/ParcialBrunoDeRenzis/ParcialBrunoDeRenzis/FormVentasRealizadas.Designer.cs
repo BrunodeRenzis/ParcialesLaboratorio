@@ -29,8 +29,8 @@ namespace ParcialBrunoDeRenzis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVentasRealizadas));
             this.lsVentas = new System.Windows.Forms.ListBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lblFacturacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -42,14 +42,6 @@ namespace ParcialBrunoDeRenzis
             this.lsVentas.Name = "lsVentas";
             this.lsVentas.Size = new System.Drawing.Size(799, 274);
             this.lsVentas.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // lblFacturacion
             // 
@@ -63,13 +55,14 @@ namespace ParcialBrunoDeRenzis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 342);
             this.Controls.Add(this.lblFacturacion);
             this.Controls.Add(this.lsVentas);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVentasRealizadas";
-            this.Text = "FormVentasRealizadas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ventas Realizadas";
             this.Load += new System.EventHandler(this.FormVentasRealizadas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,7 +72,6 @@ namespace ParcialBrunoDeRenzis
         #endregion
 
         private System.Windows.Forms.ListBox lsVentas;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label lblFacturacion;
     }
 }

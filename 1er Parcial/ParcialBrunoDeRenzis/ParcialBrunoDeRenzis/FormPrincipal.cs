@@ -78,11 +78,6 @@ namespace ParcialBrunoDeRenzis
             frm.ShowDialog();
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormLogin.UsuarioLogueado = false;
-        }
-
        
         private void menuPpal_MouseHover(object sender, EventArgs e)
         {

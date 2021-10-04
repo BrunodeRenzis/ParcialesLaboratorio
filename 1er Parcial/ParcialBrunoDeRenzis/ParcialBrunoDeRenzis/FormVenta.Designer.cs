@@ -29,29 +29,33 @@ namespace ParcialBrunoDeRenzis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnAgregarAVenta = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.txtBoxCantidad = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lsProductosVenta = new System.Windows.Forms.ListBox();
+            this.tbProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(0, 26);
+            this.dgvProductos.Location = new System.Drawing.Point(0, 44);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowTemplate.Height = 25;
             this.dgvProductos.Size = new System.Drawing.Size(711, 184);
             this.dgvProductos.TabIndex = 0;
             // 
             // btnAgregarAVenta
             // 
-            this.btnAgregarAVenta.Location = new System.Drawing.Point(277, 233);
+            this.btnAgregarAVenta.Location = new System.Drawing.Point(55, 328);
             this.btnAgregarAVenta.Name = "btnAgregarAVenta";
             this.btnAgregarAVenta.Size = new System.Drawing.Size(152, 52);
             this.btnAgregarAVenta.TabIndex = 1;
@@ -62,7 +66,7 @@ namespace ParcialBrunoDeRenzis
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(63, 252);
+            this.lblCantidad.Location = new System.Drawing.Point(55, 273);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(55, 15);
             this.lblCantidad.TabIndex = 2;
@@ -70,14 +74,14 @@ namespace ParcialBrunoDeRenzis
             // 
             // txtBoxCantidad
             // 
-            this.txtBoxCantidad.Location = new System.Drawing.Point(124, 249);
+            this.txtBoxCantidad.Location = new System.Drawing.Point(116, 270);
             this.txtBoxCantidad.Name = "txtBoxCantidad";
             this.txtBoxCantidad.Size = new System.Drawing.Size(100, 23);
             this.txtBoxCantidad.TabIndex = 3;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(494, 233);
+            this.btnConfirmar.Location = new System.Drawing.Point(1286, 307);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(152, 52);
             this.btnConfirmar.TabIndex = 4;
@@ -87,36 +91,51 @@ namespace ParcialBrunoDeRenzis
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(717, 0);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowTemplate.Height = 25;
             this.dgvClientes.Size = new System.Drawing.Size(728, 295);
             this.dgvClientes.TabIndex = 5;
             // 
-            // menuStrip1
+            // lsProductosVenta
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
+            this.lsProductosVenta.FormattingEnabled = true;
+            this.lsProductosVenta.ItemHeight = 15;
+            this.lsProductosVenta.Location = new System.Drawing.Point(404, 258);
+            this.lsProductosVenta.Name = "lsProductosVenta";
+            this.lsProductosVenta.Size = new System.Drawing.Size(256, 214);
+            this.lsProductosVenta.TabIndex = 6;
+            // 
+            // tbProducto
+            // 
+            this.tbProducto.Location = new System.Drawing.Point(0, 15);
+            this.tbProducto.Name = "tbProducto";
+            this.tbProducto.PlaceholderText = "Ingrese nombre producto";
+            this.tbProducto.Size = new System.Drawing.Size(309, 23);
+            this.tbProducto.TabIndex = 7;
+            this.tbProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbProducto_KeyUp);
             // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1450, 371);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1450, 507);
+            this.Controls.Add(this.tbProducto);
+            this.Controls.Add(this.lsProductosVenta);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.txtBoxCantidad);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.btnAgregarAVenta);
             this.Controls.Add(this.dgvProductos);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVenta";
-            this.Text = "FormVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Venta Nueva";
             this.Load += new System.EventHandler(this.FormVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
@@ -133,6 +152,7 @@ namespace ParcialBrunoDeRenzis
         private System.Windows.Forms.TextBox txtBoxCantidad;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ListBox lsProductosVenta;
+        private System.Windows.Forms.TextBox tbProducto;
     }
 }

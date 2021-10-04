@@ -39,5 +39,24 @@ namespace ParcialBrunoDeRenzis
             frm.ShowDialog();
             ActualizarDataGrid();
         }
+
+        List<Cliente> ClienteFiltrado(List<Cliente> clientesFiltrados)
+        {
+            foreach (Cliente cliente in PetShop.Clientes)
+            {
+                if (cliente.Nombre.Contains(tbCliente.Text, StringComparison.OrdinalIgnoreCase) || cliente.Apellido.Contains(tbCliente.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    clientesFiltrados.Add(cliente);
+                }
+            }
+
+            return clientesFiltrados;
+        }
+
+        private void tbCliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<Cliente> clientesFiltrados = new List<Cliente>();
+            this.dgvClientes.DataSource = ClienteFiltrado(clientesFiltrados);
+        }
     }
 }

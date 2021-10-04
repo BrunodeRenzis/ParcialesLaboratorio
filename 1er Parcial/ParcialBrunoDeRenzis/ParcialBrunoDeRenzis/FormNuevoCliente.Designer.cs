@@ -29,12 +29,11 @@ namespace ParcialBrunoDeRenzis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNuevoCliente));
             this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbSaldo = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.lblSaldo = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,13 +43,6 @@ namespace ParcialBrunoDeRenzis
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 23);
             this.tbNombre.TabIndex = 0;
-            // 
-            // tbSaldo
-            // 
-            this.tbSaldo.Location = new System.Drawing.Point(147, 171);
-            this.tbSaldo.Name = "tbSaldo";
-            this.tbSaldo.Size = new System.Drawing.Size(100, 23);
-            this.tbSaldo.TabIndex = 1;
             // 
             // tbApellido
             // 
@@ -77,18 +69,9 @@ namespace ParcialBrunoDeRenzis
             this.lblApellido.TabIndex = 4;
             this.lblApellido.Text = "Apellido";
             // 
-            // lblSaldo
-            // 
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(64, 174);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(36, 15);
-            this.lblSaldo.TabIndex = 5;
-            this.lblSaldo.Text = "Saldo";
-            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(98, 229);
+            this.btnAgregar.Location = new System.Drawing.Point(98, 154);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 39);
             this.btnAgregar.TabIndex = 6;
@@ -100,16 +83,17 @@ namespace ParcialBrunoDeRenzis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 297);
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.ClientSize = new System.Drawing.Size(307, 216);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.tbApellido);
-            this.Controls.Add(this.tbSaldo);
             this.Controls.Add(this.tbNombre);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNuevoCliente";
-            this.Text = "FormNuevoCliente";
+            this.Text = "Nuevo Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,11 +102,9 @@ namespace ParcialBrunoDeRenzis
         #endregion
 
         private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbSaldo;
         private System.Windows.Forms.TextBox tbApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Button btnAgregar;
     }
 }

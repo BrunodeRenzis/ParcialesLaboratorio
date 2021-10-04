@@ -22,5 +22,16 @@ namespace Entidades
             Piedritas,
             Rascador
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Producto accesorio in PetShop.Productos)
+            {
+                sb.AppendLine($"{base.ToString()}");
+                sb.AppendLine($"{this.TipoAccesorio}");
+            }
+            return sb.ToString();
+        }
     }
 }

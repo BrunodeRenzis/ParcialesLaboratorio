@@ -89,5 +89,17 @@ namespace Entidades
             else
                 return PetShop.Productos;
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Producto item in PetShop.Productos)
+            {
+                sb.AppendLine($"{NombreProducto}  ");
+                sb.AppendLine($"{MarcaProducto}   ");
+                sb.AppendLine($"{PrecioProducto}   ");
+            }
+            return sb.ToString();
+        }
     }
 }
