@@ -21,15 +21,24 @@ namespace ParcialBrunoDeRenzis
 
         public static bool UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
 
+        /// <summary>
+        /// Constructor estático en el cual se instancia una lista por única vez
+        /// </summary>
         static FormLogin()
         {
             PetShop.HardcodeoUsuarios();
         }
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
         public FormLogin()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Limpia los campos de usuario y contraseña del formulario
+        /// </summary>
         void Limpiar()
         {
             this.tbUser.Text = String.Empty;
@@ -38,6 +47,11 @@ namespace ParcialBrunoDeRenzis
 
         
 
+        /// <summary>
+        /// Valida los datos ingresados con los correspondientes a la lista de usuarios y permite el acceso
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             
@@ -59,6 +73,11 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
+        /// <summary>
+        /// Carga la lista de empleados para su visualización
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormLogin_Load(object sender, EventArgs e)
         {
             foreach (Empleado empleado in PetShop.Empleados)
@@ -67,6 +86,11 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
+        /// <summary>
+        /// Autocompleta los datos de nombre de usuario y contraseña
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lsUsuarios_MouseClick(object sender, MouseEventArgs e)
         {
             foreach (Empleado empleado in PetShop.Empleados)

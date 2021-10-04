@@ -11,6 +11,9 @@ namespace Entidades
         static List<Venta> ventas;
         static Empleado empleado;
 
+        /// <summary>
+        /// Constructor estático de la clase PetShop, solo será ejecutado una vez, para inicializar las listas y un empleado.
+        /// </summary>
         static PetShop()
         {
             Productos = new List<Producto>();
@@ -26,6 +29,9 @@ namespace Entidades
         public static List<Producto> Productos { get => productos; set => productos = value; }
         public static Empleado Empleado { get => empleado; set => empleado = value; }
 
+        /// <summary>
+        /// Método encargado de cargar empleados y su rol al programa en su inicialización
+        /// </summary>
         public static void HardcodeoUsuarios()
         {
             PetShop.Empleados+=new Empleado("Bruno","de Renzis","bderenzis", "bruno2021",EPerfil.Administrador);
@@ -33,6 +39,9 @@ namespace Entidades
             PetShop.Empleados+=new Empleado("Ezequiel","Oggioni","eoggioni", "ezequiel2021",EPerfil.Empleado);
         }
 
+        /// <summary>
+        /// Método encargado de cargar clientes al programa en su inicialización
+        /// </summary>
         public static void HardcodeoClientes()
         {
             PetShop.Clientes+=new Cliente("Cosme","Fulanito");
@@ -46,6 +55,9 @@ namespace Entidades
             PetShop.Clientes+=new Cliente("Susana","Door");
         }
 
+        /// <summary>
+        /// Método encargado de cargar productos al programa en su inicialización
+        /// </summary>
         public static void HardcodearProductos()
         {
             PetShop.Productos+=new Alimento("Power Balance", "Dog Chow", 4000, Producto.ETipo.Alimento, 7,20);
@@ -61,6 +73,9 @@ namespace Entidades
             PetShop.Productos+=new Accesorio("Rascador grande", "Happy Cat", 4500,15, Producto.ETipo.Accesorio, Accesorio.ETipoAccesorio.Rascador);
         }
 
+        /// <summary>
+        /// Método encargado de cargar Ventas al programa en su inicialización
+        /// </summary>
         public static void HardcodearVentas()
         {
             Producto prod1 = new Alimento("Power Balance", "Dog Chow", 4000, Producto.ETipo.Alimento, 7, 20);

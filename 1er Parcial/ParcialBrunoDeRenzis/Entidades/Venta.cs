@@ -15,6 +15,9 @@ namespace Entidades
         double monto;
         List<Producto> productos;
 
+        /// <summary>
+        /// Constructor por defecto de una venta inicializando la lista y generando un id de venta automático.
+        /// </summary>
         public Venta()
         {
             productos = new List<Producto>();
@@ -58,7 +61,11 @@ namespace Entidades
         public List<Producto> Productos { get => productos; set => productos = value; }
 
         
-
+        /// <summary>
+        /// Calcula el monto de la venta total
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public double CalcularMonto(int cantidad)
         {
             double monto = 0;
@@ -70,7 +77,12 @@ namespace Entidades
         }
 
         
-
+        /// <summary>
+        /// Sobrecarga de operador == devuelve true si los objetos comparten el mismo id, false si no.
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static bool operator ==(List<Venta> productos, Venta producto)
         {
             foreach (Venta auxProducto in PetShop.Ventas)
@@ -81,10 +93,23 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Sobrecarga de operador != devuelve la negación del ==.
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static bool operator !=(List<Venta> productos, Venta producto)
         {
             return !(productos == producto);
         }
+
+        /// <summary>
+        /// Sobrecarga de operador + agrega un elementoa  la lista si este no existe.
+        /// </summary>
+        /// <param name="ventas"></param>
+        /// <param name="venta"></param>
+        /// <returns></returns>
         public static List<Venta> operator + (List<Venta> ventas, Venta venta)
         {
             
@@ -99,6 +124,10 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// Sobrecarga del método toString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

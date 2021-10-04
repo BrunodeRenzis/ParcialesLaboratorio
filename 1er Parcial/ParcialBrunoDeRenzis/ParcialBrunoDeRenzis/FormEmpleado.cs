@@ -12,11 +12,19 @@ namespace ParcialBrunoDeRenzis
 {
     public partial class FormEmpleado : Form
     {
+        /// <summary>
+        /// Constructor por defecto del formulario
+        /// </summary>
         public FormEmpleado()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga de empleados al iniciar el formEmpleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormEmpleado_Load(object sender, EventArgs e)
         {
             this.cmbRol.DataSource = Enum.GetValues(typeof(EPerfil));
@@ -26,6 +34,10 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
+        /// <summary>
+        /// Genera un nuevo nombre de usuario al agregar un empleado tomando su primer letra de nombre y su apellido.
+        /// </summary>
+        /// <returns></returns>
         private string GenerarUsuario()
         {
             string nombreUsuario = String.Empty;
@@ -38,6 +50,10 @@ namespace ParcialBrunoDeRenzis
             return nombreUsuario;
         }
 
+        /// <summary>
+        /// Genera una nueva password al agregar un empleado tomando su apellido completo y el año actual.
+        /// </summary>
+        /// <returns></returns>
         private string GenerarContraseña()
         {
             string passUsuario = String.Empty;
@@ -49,12 +65,20 @@ namespace ParcialBrunoDeRenzis
             return passUsuario;
         }
 
+        /// <summary>
+        /// Actualización de la lista de empleados en el data grid.
+        /// </summary>
         private void ActualizarListaEmpleados()
         {
             this.lsEmpleados.DataSource = null;
             this.lsEmpleados.DataSource = PetShop.Empleados;
         }
 
+        /// <summary>
+        /// Evento que valida el registro de un nuevo empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             
@@ -71,6 +95,11 @@ namespace ParcialBrunoDeRenzis
 
         }
 
+        /// <summary>
+        /// Evento que valida la eliminación de un empleado existente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (!Validaciones.NotEmptyString(this.txtBoxNombre.Text, this.txtBoxApellido.Text, this.cmbRol.SelectedItem.ToString()))
@@ -87,6 +116,11 @@ namespace ParcialBrunoDeRenzis
 
         }
 
+        /// <summary>
+        /// Evento que autocompleta los textbox con campos de empleado para una más rápida gestión.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lsEmpleados_MouseClick(object sender, MouseEventArgs e)
         {
             foreach (Empleado empleado in PetShop.Empleados)
@@ -100,6 +134,11 @@ namespace ParcialBrunoDeRenzis
             }
         }
 
+        /// <summary>
+        /// Evento que modifica los datos de un Empleado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             bool empleadoModificado = false;

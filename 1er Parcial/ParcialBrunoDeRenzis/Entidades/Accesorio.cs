@@ -9,6 +9,15 @@ namespace Entidades
     public class Accesorio : Producto
     {
         ETipoAccesorio tipoAccesorio;
+        /// <summary>
+        /// Constructor con parámetros de la clase Accesorio.
+        /// </summary>
+        /// <param name="nombreProducto"></param>
+        /// <param name="marcaProducto"></param>
+        /// <param name="precioProducto"></param>
+        /// <param name="stock"></param>
+        /// <param name="tipo"></param>
+        /// <param name="tipoAccesorio"></param>
         public Accesorio(string nombreProducto, string marcaProducto, double precioProducto,double stock, ETipo tipo,ETipoAccesorio tipoAccesorio) : base(nombreProducto, marcaProducto, precioProducto, stock, tipo)
         {
             this.TipoAccesorio = tipoAccesorio;
@@ -23,6 +32,10 @@ namespace Entidades
             Rascador
         }
 
+        /// <summary>
+        /// Sobreescritura del método ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

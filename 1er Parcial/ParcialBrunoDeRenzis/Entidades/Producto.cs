@@ -15,10 +15,22 @@ namespace Entidades
         double stock;
         ETipo tipo;
 
+        /// <summary>
+        /// Constructor por defecto de la clase producto
+        /// </summary>
         protected Producto()
         {
             idProducto = 1;
         }
+
+        /// <summary>
+        /// Constructor de producto con parámetros
+        /// </summary>
+        /// <param name="nombreProducto"></param>
+        /// <param name="marcaProducto"></param>
+        /// <param name="precioProducto"></param>
+        /// <param name="stock"></param>
+        /// <param name="tipo"></param>
         protected Producto(string nombreProducto,string marcaProducto, double precioProducto,double stock, ETipo tipo):this()
         {
             this.IdProducto = IdAutomatico();
@@ -41,7 +53,10 @@ namespace Entidades
             Alimento,
             Accesorio
         }
-
+        /// <summary>
+        /// Genera un id automático a partir de los elementos de la lista.
+        /// </summary>
+        /// <returns></returns>
         int IdAutomatico()
         {
             for(int i=0;i<=PetShop.Productos.Count;i++)
@@ -52,6 +67,12 @@ namespace Entidades
             return IdProducto;
         }
 
+        /// <summary>
+        /// Sobrecarga del operador == , devuelve true si los productos son iguales
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static bool operator ==(List<Producto> productos, Producto producto)
         {
             foreach (Producto auxProducto in PetShop.Productos)
@@ -62,11 +83,23 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Sobrecarga del operador != , devuelve true si los productos son distintos
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static bool operator !=(List<Producto> productos, Producto producto)
         {
             return !(productos == producto);
         }
 
+        /// <summary>
+        /// Sobrecarga del operador + , devuelve una lista con un elemento agregado si los productos son distintos
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static List<Producto> operator +(List<Producto> productos, Producto producto)
         {
             if (productos != producto)
@@ -79,6 +112,12 @@ namespace Entidades
                 return PetShop.Productos;
         }
 
+        /// <summary>
+        /// Sobrecarga del operador - , devuelve una lista con un elemento quitado si los productos son iguales
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static List<Producto> operator -(List<Producto> productos, Producto producto)
         {
             if (productos == producto)
@@ -90,6 +129,10 @@ namespace Entidades
                 return PetShop.Productos;
         }
 
+        /// <summary>
+        /// Sobrecarga del método tostring
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
